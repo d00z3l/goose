@@ -399,7 +399,7 @@ impl GooseControllerState {
                 loop {
                     // Wait until the client sends a command.
                     let data = match ws_receiver.next().await {
-                        Some(d) => (d),
+                        Some(d) => d,
                         None => {
                             // Returning with no data means the client disconnected.
                             info!(
